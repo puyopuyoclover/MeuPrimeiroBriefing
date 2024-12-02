@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerberus Petshop</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        /* Estilo da notificação */
+        .notification {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            display: none; /* Inicialmente escondida */
+            z-index: 1000;
+        }
+
+        /* Ajuste de espaçamento para o título principal */
+        .mt-custom {
+            margin-top: 100px; /* Espaçamento maior para evitar sobreposição */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <a class="navbar-brand m-2" href="index.html">
+                <img src="img/cerberus.png" alt="" width="80" height="70">
+            </a>
+            <button class="navbar-toggler bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="formulario.html">Cadrastar-se</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="adoção.html">Adoção</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Cachorro
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="racoesEprodutosCACHORRO.html">Rações e Produtos</a></li>
+                            <li><a class="dropdown-item" href="BanhoETosa.html">Banho e Tosa</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                        </ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Gato
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="racoesEprodutosGATO.html">Rações e Produtos</a></li>
+                                <li><a class="dropdown-item" href="BanhoETosa.html">Banho e Tosa</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                            </ul>
+                            
+                        </li>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+<main>
+    <div class="container">
+        <section id="banho-tosa" class="mt-custom text-center">
+            <h1>Banho e Tosa</h1>
+
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/banhocomp.png" class="card-img-top" alt="Banho Completo">
+                        <div class="card-body">
+                            <h5 class="card-title">Banho Completo</h5>
+                            <p class="card-text">Banho com shampoo e condicionador especial, secagem e perfume.</p>
+                            <p><strong>Preço: R$ 50,00</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/tosahigienica.png" class="card-img-top" alt="Tosa Higiênica">
+                        <div class="card-body">
+                            <h5 class="card-title">Tosa Higiênica</h5>
+                            <p class="card-text">Tosa para higienização e cuidados básicos com seu pet.</p>
+                            <p><strong>Preço: R$ 40,00</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/tosacomp.png" class="card-img-top" alt="Tosa Completa">
+                        <div class="card-body">
+                            <h5 class="card-title">Tosa Completa</h5>
+                            <p class="card-text">Tosa personalizada conforme a raça ou estilo do seu pet.</p>
+                            <p><strong>Preço: R$ 80,00</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="formulario mt-4">
+                <h2>Agende seu Atendimento</h2>
+                <form id="agendamentoForm">
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome do Cliente</label>
+                        <input type="text" class="form-control" id="nome" name="nome" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="pet" class="form-label">Nome do Pet</label>
+                        <input type="text" class="form-control" id="pet" name="pet" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="servico" class="form-label">Serviço Selecionado</label>
+                        <select class="form-select" id="servico" name="servico">
+                            <option value="banho">Banho Completo</option>
+                            <option value="tosa-higienica">Tosa Higiênica</option>
+                            <option value="tosa-completa">Tosa Completa</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="data" class="form-label">Data do Agendamento</label>
+                        <input type="date" class="form-control" id="data" name="data" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Agendar</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    
+    <div id="notification" class="notification">
+        Agendamento concluído com sucesso!
+    </div>
+
+    <footer class="text-center mt-5">
+        <p>&copy; 2024 Cerberus Petshop. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById('agendamentoForm');
+        const notification = document.getElementById('notification');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            notification.style.display = 'block'; 
+
+            setTimeout(() => {
+                notification.style.display = 'none'; 
+                window.location.href = "index.html"; 
+            }, 3000); 
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybR7f+Po6yuxz4v7H6b5s0XxQJphA8Rn38D4v3f5eIm3EJ6V9b" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-cu6s1A1ZZVR8nRkcwJlff2fA5vB8VqaCkj1R2aE16T2R9eZi3r5Dz2FzVXs1Y5H4" crossorigin="anonymous"></script>
+</body>
+</html>
